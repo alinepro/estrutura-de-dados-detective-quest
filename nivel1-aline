@@ -2,20 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* ==========================================================
-   STRUCT: Sala
-   Representa um cômodo da mansão (nó da árvore binária)
-   ========================================================== */
+//STRUCT: Sala - Representa um cômodo da mansão (nó da árvore binária)
+  
 typedef struct Sala {
     char nome[50];
     struct Sala* esquerda;
     struct Sala* direita;
 } Sala;
 
-/* ==========================================================
-   FUNÇÃO: criarSala
-   Cria dinamicamente uma nova sala com o nome informado
-   ========================================================== */
+//FUNÇÃO: criarSala - Cria dinamicamente uma nova sala com o nome informado
+  
 Sala* criarSala(const char* nome) {
     Sala* novaSala = (Sala*) malloc(sizeof(Sala));
     
@@ -31,17 +27,15 @@ Sala* criarSala(const char* nome) {
     return novaSala;
 }
 
-/* ==========================================================
-   FUNÇÃO: explorarSalas
-   Permite que o jogador navegue pela mansão interativamente
-   ========================================================== */
+//FUNÇÃO: explorarSalas - Permite que o jogador navegue pela mansão interativamente
+
 void explorarSalas(Sala* atual) {
     char opcao;
 
     while (atual != NULL) {
         printf("\nVocê está em: %s\n", atual->nome);
 
-        // Se for nó-folha, encerra exploração
+  // Se for nó-folha, encerra exploração
         if (atual->esquerda == NULL && atual->direita == NULL) {
             printf("Este cômodo não possui mais caminhos.\n");
             printf("Fim da exploração!\n");
