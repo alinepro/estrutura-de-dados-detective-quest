@@ -103,7 +103,7 @@ void explorarSalasComPistas(Sala* atual, PistaNode** arvorePistas) {
 
         // Se houver pista na sala, coleta automaticamente
         if (strlen(atual->pista) > 0) {
-            printf("🔎 Pista encontrada: %s\n", atual->pista);
+            printf("Pista encontrada: %s\n", atual->pista);
             *arvorePistas = inserirPista(*arvorePistas, atual->pista);
 
             // Evita coletar a mesma pista novamente
